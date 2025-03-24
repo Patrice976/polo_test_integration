@@ -30,7 +30,9 @@
     </nav>
 
     <main>
-      <section class="actionList"></section>
+      <section class="actionList">
+        <h1>Les patients du cabinet</h1>
+      </section>
       <section class="search"></section>
       <section class="searchResult"></section>
     </main>
@@ -67,7 +69,8 @@ header{
 }
 
 .mainLayout {
-  display: flex
+  display: flex;
+  width : 100dvw
 }
 
 nav {
@@ -80,6 +83,10 @@ nav {
   font-size: 18px;
   background-color: #3ce0a0  ;
   color : white
+}
+
+main {
+  flex : 1
 }
 
 nav>ul {
@@ -99,9 +106,29 @@ nav>ul {
 }
 
 nav ul ul {
+  display: flex;
+  flex-direction: column;
   gap: 6px;
   list-style: none;
   
 }
 
-</style>
+nav ul ul li {
+  font-size: 12px;
+  gap: 6px
+}
+
+.actionList {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 51% 75%, 46% 83%, 41% 75%, 0% 75%);
+  height: 282px;
+  background: linear-gradient(#E4F4ED,#F9F9F9);
+ 
+}
+
+.search {
+  background-color : white;
+  height : 288px;
+}
+
+
+</style> 
