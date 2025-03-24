@@ -1,47 +1,57 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+  <img src="./assets/polo_logo.png" id="logo" alt="logo polo">
+  <div class="userProfileInfo">
+    <p>Lola Dufour</p>
+    <img src="./assets/lolapp.png" alt="photo de profile de lola Dufour">
+  </div>
   </header>
 
+  <nav>
+    <ul>
+      <li></li>
+    </ul>
+  </nav>
+
   <main>
-    <TheWelcome />
+    <section class="actionList"></section>
+    <section class="search"></section>
+    <section class="searchResult"></section>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+
+header{
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height : 109px;
+  
+
+}
+.userProfileInfo {
+  display :flex;
+  align-items: center;
+  color : black;
+  line-height: 1;
+  width: 121.5px;
+  height: 36px;
+  margin-right: 60px;
+  font-family: 'simply_rounded' 
+
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+#logo {
+  margin-left : 60px;
+
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
