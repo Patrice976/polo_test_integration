@@ -7,10 +7,6 @@
     vertical-align: baseline;
   
 }
-@font-face {
-  font-family: 'simply_rounded' ;
-  src: url(./Fonts/simply_rounded.ttf) format('truetype');
-}
 
 body {
   background-color: white;
