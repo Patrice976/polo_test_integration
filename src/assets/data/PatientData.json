@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "nom": "Cécile Moulin",
+      "age": "81 ans",
+      "photo": "patients/avatarCecileMoulin.png"
+    },
+    {
+        "id": 2,
+        "nom": "Juliette Masselis",
+        "age": "39 ans",
+        "photo": "patients/avatarJulietteMasselis.png"
+      },
+      {
+        "id": 3,
+        "nom": "René Guitay",
+        "age": "81 ans",
+        "photo": "patients/avatarRenéGuitay.png" 
+      },
+      {
+        "id": 4,
+        "nom": "Clara Camalet",
+        "age": "31 ans",
+        "photo": "patients/avatarJulietteMasselis.png" 
+      },
+      {
+        "id": 5,
+        "nom": "Lola Dufour",
+        "age": "81 ans",
+        "photo": "patients/avatarLolaDufour.png" 
+      },
+      {
+        "id": 6,
+        "nom": "Etienne Morlé",
+        "age": "81 ans",
+        "photo": "patients/avatarEtienneMorlé.png" 
+      }
+    ]

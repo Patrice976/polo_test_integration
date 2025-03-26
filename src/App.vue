@@ -40,7 +40,16 @@
       </div>
       </section>
       <section class="search"></section>
-      <section class="searchResult"></section>
+      <section class="searchResult">
+      <Patient
+      v-for="patient in data" 
+      :key="patient.id"
+      :name="patient.nom"
+      :age="patient.age"
+      :profilpic="patient.photo"
+      :theme="(patient.id % 2 === 0) ? 'white' : 'green'" 
+      ></Patient>
+    </section>
     </main>
 </div>
 </template>
@@ -48,10 +57,14 @@
 <script setup>
 import CustomButton from "./components/Button.vue"
 import Navigation from "./components/Navigation.vue"
+import Patient from "./components/Patient.vue"
+import patientData from "./assets/data/PatientData.json"
 import pictoAddPatient from "./assets/Picto_ajout_patient.png"
 import pictoWaitingPatient from "./assets/Picto_patient_attente.png"
 import pictoArchived from "./assets/Picto_archives.png"
 import pictoHelper from "./assets/Picto_aidant.png"
+
+const data = patientData
 </script>
 
 <style scoped>
@@ -94,7 +107,9 @@ header{
 
 .mainLayout {
   display: flex;
-  width : 100dvw
+  width : 100dvw;
+  min-height: 100dvh;
+  align-items: stretch;
 }
 
 
@@ -125,6 +140,15 @@ main {
   height : 288px;
 }
 
+.searchResult {
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);             
+  justify-items: center;
+  width:781px;
+  height:865px;
+
+}
 
 
 </style> 
