@@ -37,6 +37,7 @@
 
 <style scoped>
 nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -84,10 +85,20 @@ nav ul ul li {
 }
 
 .patient_li {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+}
+.patient_li::before {
+  content: "";
+  position: absolute;
+  left: -3.53dvw;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: #fff;
 }
 
 .logoPatient {
@@ -99,5 +110,12 @@ nav ul ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.white-bar {
+  width: 5px;
+  height: 100%;
+  background-color: #fff;
+  align-self: flex-start;
 }
 </style>
