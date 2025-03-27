@@ -41,9 +41,9 @@ nav {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 18.75rem;            /* 300px */
   align-items: center;
-  font-size: 18px;
+  font-size: 1.125rem;         /* 18px */
   font-family: "Nunito", sans-serif;
   font-weight: 900;
   background-color: #3ce0a0;
@@ -55,9 +55,13 @@ nav > ul {
   flex-direction: column;
   justify-content: space-between;
   height: 25%;
-  gap: 32px;
-  margin-top: 65px;
+  gap: 2rem;                /* 32px */
+  margin-top: 4.06rem;        /* 65px approx. */
   list-style: none;
+}
+
+nav > ul > li {
+  width: 100%;
 }
 
 #patients {
@@ -67,25 +71,21 @@ nav > ul {
 
 #patients ul {
   color: white;
-  font-size: 12px;
+  font-size: 0.75rem;         /* 12px */
 }
 
 nav ul ul {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  line-height: 173%;
+  gap: 0.375rem;            /* 6px */
+  line-height: 173%;         /* reste en pourcentage */
   list-style: none;
 }
 
-nav > ul > li {
-  width: 100%;
-}
-
 nav ul ul li {
-  font-size: 12px;
-  gap: 6px;
-  margin-left: 35px;
+  font-size: 0.75rem;         /* 12px */
+  gap: 0.375rem;            /* 6px */
+  margin-left: 2.19rem;       /* 35px */
 }
 
 .patient_li {
@@ -93,22 +93,23 @@ nav ul ul li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 0.375rem;    /* 6px */
 }
+
 .patient_li::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 5px;
+  width: 0.31rem;            /* 5px */
   background-color: #fff;
   transform: translateX(-3.4em);
 }
 
 .logoPatient {
-  height: 14px;
-  width: 12px;
+  height: 0.875rem;          /* 14px */
+  width: 0.75rem;            /* 12px */
 }
 
 .document {
@@ -118,7 +119,7 @@ nav ul ul li {
 }
 
 .white-bar {
-  width: 5px;
+  width: 0.31rem;            /* 5px */
   height: 100%;
   background-color: #fff;
   align-self: flex-start;

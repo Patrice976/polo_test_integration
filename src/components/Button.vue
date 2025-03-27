@@ -1,80 +1,79 @@
 <template>
-    <button :class="buttonTheme">
-      <img
-        v-if="image"
-        :src="image"
-        alt=""
-        class="imgBtn"
-      >
-      <span v-html="txtBtn"></span>
-    </button>
-  </template>
-  
-  <script setup>
-  import { defineProps, computed } from 'vue'
-  
-  const props = defineProps({
-    image: {
-      type: String,
-      default: ""
-    },
-    txtBtn: {
-      type: String,
-      default: ""
-    },
-    theme: {
-      type: String,
-      default: "green",
-      validator: (value) => ["green", "white"].includes(value)
-    }
-  })
-  
-  const buttonTheme = computed(() => {
-    return [
-      "buttonTheme", 
-      props.theme === "green" ? "buttonGreen" : "buttonWhite"
-    ]
-  })
-  </script>
-  
-  <style scoped>
-  button {
-    transition: transform 0.5s ease-in-out;
-  }
-  button:hover {
-    transform : scale(1.2);
-  }
-  .buttonTheme {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 8px 12px;
-    border-radius: 9999px;
-    height: 80px;
-    width: 239px;
-    cursor: pointer;
-    font-family: "Nunito", sans-serif;
-    font-weight: 900;
-    font-size: 16px; 
-   
-  }
-  
-  .buttonGreen {
-    background-color: #3ce0a0;
-    color: white;
-  }
-  
-  .buttonWhite {
-    background-color: transparent;
-    border: 3px solid #3ce0a0;
-    color: #3ce0a0;
-  }
+  <button :class="buttonTheme">
+    <img
+      v-if="image"
+      :src="image"
+      alt=""
+      class="imgBtn"
+    >
+    <span v-html="txtBtn"></span>
+  </button>
+</template>
 
-  span {
-    white-space: pre-wrap;
+<script setup>
+import { computed } from 'vue'
+
+const props = defineProps({
+  image: {
+    type: String,
+    default: ""
+  },
+  txtBtn: {
+    type: String,
+    default: ""
+  },
+  theme: {
+    type: String,
+    default: "green",
+    validator: (value) => ["green", "white"].includes(value)
   }
-  
- 
-  </style>
-  
+})
+
+const buttonTheme = computed(() => {
+  return [
+    "buttonTheme", 
+    props.theme === "green" ? "buttonGreen" : "buttonWhite"
+  ]
+})
+</script>
+
+<style scoped>
+button {
+  transition: transform 0.5s ease-in-out;
+}
+button:hover {
+  transform: scale(1.2);
+}
+.buttonTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* 8px => 0.5rem, 12px => 0.75rem */
+  padding: 0.5rem 0.75rem;
+  border-radius: 9999px;
+  /* 80px => 5rem */
+  height: 5rem;
+  /* 239px => 239/16 ≈ 14.94rem */
+  width: 14.94rem;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  /* 16px => 1rem */
+  font-size: 1rem;
+}
+.buttonGreen {
+  background-color: #3ce0a0;
+  color: white;
+}
+.buttonWhite {
+  background-color: transparent;
+  /* 3px => 3/16 ≈ 0.19rem */
+  border: 0.19rem solid #3ce0a0;
+  color: #3ce0a0;
+}
+
+span {
+  white-space: pre-wrap;
+}
+</style>
