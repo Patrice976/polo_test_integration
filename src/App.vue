@@ -39,7 +39,22 @@
         :image="pictoHelper " ></CustomButton>
       </div>
       </section>
-      <section class="search"></section>
+      <section class="search">
+        <div class="searchContainer">
+          <img src="./assets/Loupe.png" alt="image loupe" class="loupeImg">
+          <div class="searchContent">
+            <h2> Recherchez un patient </h2>
+            <h3>Entrez les première lettres de nom du patient que vous recherchez </h3>
+            <form @submit.prevent="handleSearch" class="searchFrom">
+            <input type="text"
+            v-model="searchQuery"
+            placeholder="écrivez ici"
+            class="search-input" />
+          </form>
+          </div>
+        </div>
+      </section>
+      <hr class="divider">
       <section class="searchResult">
       <Patient
       v-for="patient in data" 
@@ -74,6 +89,21 @@ h1{
   font-size: 40px;
   margin-bottom: 1em;
 }
+
+h2{
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: #3CE0A0
+}
+
+h3{
+  font-family: "Nunito", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #757575
+}
+
 
 header{
   background-color: white;
@@ -138,6 +168,55 @@ main {
 .search {
   background-color : white;
   height : 288px;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.searchContainer{
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;   /* centre le conteneur sur la page */
+  padding-left: 2rem;
+
+}
+
+
+.loupeImg {
+  width: 178px;
+  height: 178px
+}
+
+.search-input {
+  width: 359px;
+  height: 60px;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px; 
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: center;
+}
+
+
+.searchContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 540px;
+  height: 161px; 
+}
+
+.divider {
+  width : 80%;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin : 0 auto
 }
 
 .searchResult {

@@ -55,7 +55,6 @@ const props = defineProps({
   margin : auto;
   padding: 32px;
   border-radius : 10px;
-  margin:auto
 }
 
 .card h1 {

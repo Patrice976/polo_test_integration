@@ -38,6 +38,12 @@
   </script>
   
   <style scoped>
+  button {
+    transition: transform 0.5s ease-in-out;
+  }
+  button:hover {
+    transform : scale(1.2);
+  }
   .buttonTheme {
     display: flex;
     align-items: center;

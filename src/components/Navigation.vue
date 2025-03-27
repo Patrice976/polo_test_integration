@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <ul>
+      <ul>
       <li>Acceuil</li>
       <li>Mes ordonnances</li>
       <li id="patients">
@@ -30,6 +30,7 @@
       <li>Mes Pilbeez</li>
       <li>Parrainer un cabinet</li>
     </ul>
+    
   </nav>
 </template>
 
@@ -77,6 +78,10 @@ nav ul ul {
   list-style: none;
 }
 
+nav > ul > li {
+  width: 100%;
+}
+
 nav ul ul li {
   font-size: 12px;
   gap: 6px;
@@ -93,11 +98,12 @@ nav ul ul li {
 .patient_li::before {
   content: "";
   position: absolute;
-  left: -3.53dvw;
+  left: 0;
   top: 0;
   bottom: 0;
   width: 5px;
   background-color: #fff;
+  transform: translateX(-3.4em);
 }
 
 .logoPatient {
