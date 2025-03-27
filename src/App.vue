@@ -28,7 +28,7 @@
         <CustomButton
         theme="green"
         txtBtn="Patients <br>en attente"
-        :image="pictoWaitingPatient " ></CustomButton>
+        :image="pictoWaitingPatient "></CustomButton>
         <CustomButton
         theme="white"
         txtBtn="Patients <br>archivés"
@@ -144,7 +144,7 @@ main {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);             
-  justify-items: center;
+  gap : 1em;
   width:781px;
   height:865px;
 
