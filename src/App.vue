@@ -194,10 +194,12 @@ main {
 }
 
 .searchResult {
-  margin: auto;
+  margin: 7em auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
+  justify-content: center;
+  gap: 2em;
+  row-gap: 8em;
   width: 100%;
   max-width: 781px;
   height: auto
