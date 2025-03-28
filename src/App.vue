@@ -1,21 +1,6 @@
 <template>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <header>
-    <img src="./assets/polo_logo.png" id="logo" alt="logo polo" />
-    <div class="userProfileInfo">
-      <p>Lola Dufour</p>
-      <img src="./assets/lolapp.png" alt="photo de profile de lola Dufour" />
-    </div>
-  </header>
-
+  
+  <Header></Header>
   <div class="mainLayout">
     <Navigation></Navigation>
     <main>
@@ -80,6 +65,7 @@
 </template>
 
 <script setup>
+import Header from "./components/Header.vue"
 import CustomButton from "./components/Button.vue"
 import Navigation from "./components/Navigation.vue"
 import Patient from "./components/Patient.vue"
@@ -101,61 +87,34 @@ function handleSearch() {
 <style scoped>
 /* On part d'une base de 16px => 1rem = 16px */
 
-/* Titres principaux */
 h1 {
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  font-size: 2.5rem; /* 40px */
+  font-size: 40px;
   margin-bottom: 1em;
+  overflow-wrap: break-word;
 }
 
 h2 {
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  font-size: 1.875rem; /* 30px */
+  font-size: 30px;
   color: #3ce0a0;
 }
 
 h3 {
   font-family: "Nunito", sans-serif;
   font-weight: 400;
-  font-size: 0.875rem; /* 14px */
+  font-size: 14px;
   color: #757575;
   text-align: center;
-}
-
-/* Header */
-header {
-  background-color: white;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  height: 6.8125rem; /* 109px */
-}
-
-.userProfileInfo {
-  display: flex;
-  align-items: center;
-  color: black;
-  line-height: 1;
-  width: 7.59375rem; /* 121.5px */
-  height: 2.25rem; /* 36px */
-  margin-right: 3.75rem; /* 60px */
-  font-family: "Nunito", sans-serif;
-  font-size: 0.875rem; /* 14px */
-  font-weight: 900;
-}
-
-#logo {
-  margin-left: 3.75rem; /* 60px */
 }
 
 /* Main layout */
 .mainLayout {
   display: flex;
-  width: 100vw;
-  min-height: 100vh;
+  width: 100dvw;
+  min-height: 100dvh;
   align-items: stretch;
 }
 
@@ -170,20 +129,19 @@ main {
   align-items: center;
   padding-top: 3.25rem; /* 52px */
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 55% 75%, 50% 83%, 45% 75%, 0% 75%);
-  height: 20.15rem; /* 322.38px */
   background: linear-gradient(#E4F4ED, #F9F9F9);
+  max-height: 100dvh;
+  height: 322px
 }
 
 .listButton {
-  width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap :1em;
 }
 
-/* Section Search */
 .search {
   background-color: white;
-  /* On laisse la hauteur s'ajuster au contenu */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,13 +151,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin: 0 auto;
+  margin-right : 20%;
   padding-left: 2rem;
+  gap: 25%
 }
 
 .loupeImg {
-  width: 11.125rem; /* 178px */
-  height: 11.125rem;
+  width: 178px;
+  height: 178px;
 }
 
 .searchContent {
@@ -208,13 +167,9 @@ main {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 33.75rem; /* 540px */
-  height: 10.0625rem; /* 161px */
+  width:100%;
 }
 
-.searchForm {
-  /* Ajoute des styles si nécessaire pour le formulaire */
-}
 
 .search-input {
   width: 22.4375rem; /* 359px */
@@ -229,7 +184,7 @@ main {
   margin: 1em;
 }
 
-/* Divider */
+
 .divider {
   width: 80%;
   height: 0.0625rem; /* 1px */
@@ -238,24 +193,41 @@ main {
   border: none;
 }
 
-/* Section SearchResult */
 .searchResult {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
-  width: 48.8125rem; /* 781px */
-  height: 54.0625rem; /* 865px */
+  width: 100%;
+  max-width: 781px;
+  height: auto
 }
 
-/* Media Query pour les écrans <= 850px */
-@media (max-width: 53.125rem) {  /* 850px / 16 = 53.125rem */
+@media (max-width: 800px) { 
+  .mainLayout {
+    padding-bottom: 79px
+  }
   .actionList {
-    height: 100vh;
+    height: 70vh
   }
   .listButton {
     flex-direction: column;
     align-items: center;
+    gap : 1em
+  }
+  nav {
+    display: none; /* ou visibility: hidden; selon le besoin */
+  }
+  .loupeImg {
+    display : none;
+  }
+  .searchResult {
+    display : flex;
+    flex-direction: column;
+  }
+  .searchContent {
+    width: auto;
+    height: auto
   }
 }
 </style>

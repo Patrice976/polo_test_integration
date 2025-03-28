@@ -107,4 +107,13 @@ const props = defineProps({
   top: -30%;
   left: 27%;
 }
+
+@media (max-width: 850px) {
+  .card {
+    margin : 4em auto
+  }
+  .patientPic {
+    top: -35%
+  }
+}
 </style>
